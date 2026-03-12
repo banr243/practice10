@@ -1,4 +1,4 @@
-# ввод параметров для ужаса
+# ввод параметров
 def input_matrix(name):
     rows = int(input(f"Количество строк матрицы {name}: "))
     cols = int(input(f"Количество столбцов матрицы {name}: "))
@@ -18,14 +18,14 @@ def input_matrix(name):
     return matrix
 
 
-# это, ну отрисовка, может быть
+# отрисовка матриц
 def print_matrix(matrix):
     for row in matrix:
         print(" ".join(f"{x:5}" for x in row))
     print()
 
 
-# сложение е е е е е е е е е е е
+# сложение 
 def add_matrices(A, B):
     if len(A) != len(B) or len(A[0]) != len(B[0]):
         raise ValueError("Матрицы должны быть одного размера")
@@ -39,7 +39,7 @@ def add_matrices(A, B):
     return result
 
 
-# ну тут умножение
+# умножение
 def multiply_matrices(A, B):
     if len(A[0]) != len(B):
         raise ValueError("Количество столбцов A должно совпадать с количеством строк B")
@@ -56,7 +56,7 @@ def multiply_matrices(A, B):
     return result
 
 
-# эт тронспанирование - типо трансформеры, чур я бамболби
+# транспонирование матриц
 def transpose_matrix(matrix):
     result = []
     for j in range(len(matrix[0])):
@@ -67,7 +67,7 @@ def transpose_matrix(matrix):
     return result
 
 
-# ну эт вывод операций, вроде
+# вывод операций
 if __name__ == "__main__":
     print("=== КАЛЬКУЛЯТОР МАТРИЦ ===")
 
@@ -85,15 +85,16 @@ if __name__ == "__main__":
         print("A + B:")
         print_matrix(add_matrices(A, B))
     except ValueError as e:
-        print("❌ Сложение невозможно:", e)
+        print("Сложение невозможно:", e)
 
     # Умножение - наверное, не 100%
     try:
         print("A * B:")
         print_matrix(multiply_matrices(A, B))
     except ValueError as e:
-        print("❌ Умножение невозможно:", e)
+        print("Умножение невозможно:", e)
 
     # Транспонирование
     print("Транспонированная A:")
     print_matrix(transpose_matrix(A))
+
