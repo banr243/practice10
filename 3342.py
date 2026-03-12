@@ -71,8 +71,8 @@ def transpose_matrix(matrix):
 if __name__ == "__main__":
     print("=== КАЛЬКУЛЯТОР МАТРИЦ ===")
 
-    A = input_matrix("A")
-    B = input_matrix("B")
+    A = input_matrix("B")
+    B = input_matrix("A")
 
     print("\nМатрица A:")
     print_matrix(A)
@@ -97,4 +97,5 @@ if __name__ == "__main__":
     # Транспонирование
     print("Транспонированная A:")
     print_matrix(transpose_matrix(A))
+
 
